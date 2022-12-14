@@ -2,9 +2,9 @@ package pro.sky.model;
 
 public class Item {
 
-    private int id;
-    private String name;
-    private double price;
+    private final int id;
+    private final String name;
+    private final double price;
 
 
     public Item(int id,String name, double price) {

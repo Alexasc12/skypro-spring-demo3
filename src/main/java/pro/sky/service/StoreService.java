@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class StoreService {
@@ -31,12 +32,16 @@ public  void init() {
 
 
 public void add(List<Integer> ids) {
-
+    basket.add(
+            ids.stream()
+                    .map(items::get)
+                    .collect(Collectors.toList())
+    );
 
 
 
 }
 public Collection<Item> get() {
-    return null;
+    return basket.get();
 }
 }
